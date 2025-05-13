@@ -39,10 +39,19 @@ void posicionarNavio(int tabuleiro[TAMANHO_TABULEIRO][TAMANHO_TABULEIRO], int li
 
 // Função para exibir o tabuleiro
 void exibirTabuleiro(int tabuleiro[TAMANHO_TABULEIRO][TAMANHO_TABULEIRO]) {
-    printf("Tabuleiro:\n");
+    printf("\n    "); //Espaço inicial para alinhar os números das linhas
+
+    //imprime as letras das colunas (A-J)
+    for (char letra = 'A'; letra <'A' + TAMANHO_TABULEIRO; letra++) {
+        printf(" %c ", letra);
+    
+    }
+    printf("\n");
+    
     for (int i = 0; i < TAMANHO_TABULEIRO; i++) {
+        printf(" %2d ", i + 1); // imprime o número da linha com largura fixa
         for (int j = 0; j < TAMANHO_TABULEIRO; j++) {
-            printf("%d ", tabuleiro[i][j]);
+            printf(" %d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
